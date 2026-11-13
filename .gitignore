@@ -31,3 +31,10 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# honk-agent build output (scripts/build_agent.sh)
+bin/
+
+# macOS metadata
+.DS_Store
+._*

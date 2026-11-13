@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "honk",
+  "name": "honk",
+  "version": "0.1.0",
+  "icon": "icon.svg",
+  "description": "Native Omarchy bar widget and control panel for the honk transparent proxy engine: traffic in the bar; overview, groups, connections, logs and settings in the panel. Talks to honk's native API through honk-agent. Forked from sbdbar.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "honk",
+    "description": "honk proxy controller, traffic monitor, and node selector",
+    "icon": "icon.svg",
+    "category": "Network",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "url": "",
+      "token": "",
+      "refreshIntervalSec": 2,
+      "showTraffic": true
+    },
+    "schema": [
+      {
+        "key": "url",
+        "type": "string",
+        "label": "Native API URL",
+        "defaultValue": "",
+        "description": "Overrides the URL saved in the panel's Settings tab, e.g. http://127.0.0.1:9527"
+      },
+      {
+        "key": "token",
+        "type": "string",
+        "label": "API Secret",
+        "defaultValue": "",
+        "description": "Overrides the secret saved in the panel's Settings tab (experimental.native_api.secret)"
+      },
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Refresh interval (seconds)",
+        "min": 1,
+        "max": 60,
+        "step": 1,
+        "defaultValue": 2
+      },
+      {
+        "key": "showTraffic",
+        "type": "boolean",
+        "label": "Display traffic in bar",
+        "defaultValue": true,
+        "description": "Show real-time upload and download speeds in the bar widget"
+      }
+    ]
+  }
+}
